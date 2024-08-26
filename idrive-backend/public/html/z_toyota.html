@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Toyota</title>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+    <main>
+      <div class="logoMarca">
+        <img src="../images/logos//marcas/toyota.webp" alt="" />
+      </div>
+      <div class="carros">
+        <ul>
+          <li class="toyota corolla">
+            <a href="#"
+              ><img
+                src="../images/carros/toyota/corolla.jpg"
+                alt="Toyota Corolla"
+              />
+              <h3>Toyota Corolla</h3>
+              <p>1.8 VVT-I HYBRID FLEX ALTIS PREMIUM CVT</p>
+              <p>R$ 139.900</p>
+            </a>
+          </li>
+          <li class="toyota hilux">
+            <a href="#"
+              ><img
+                src="../images/carros/toyota/hilux.webp"
+                alt="Toyota Hilux"
+              />
+              <h3>TOYOTA HILUX</h3>
+              <p>2.8 D-4D TURBO DIESEL CD SRV 4X4 AUTOMÁTICO</p>
+              <p>R$ 247.900</p></a
+            >
+          </li>
+          <li class="toyota supra">
+            <a href="#"
+              ><img
+                src="../images/carros/toyota/supra.webp"
+                alt="Toyota Supra"
+              />
+              <h3>TOYOTA SUPRA</h3>
+              <p>3.0 I6 TURBO GASOLINA PREMIUM AUTOMÁTICO</p>
+              <p>R$ 850.000</p></a
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script>
+      function loadHTML(id, url) {
+        fetch(url)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+          })
+          .catch((error) => console.error("Erro ao carregar HTML:", error));
+      }
+
+      loadHTML("header-placeholder", "header.html");
+      loadHTML("footer-placeholder", "footer.html");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Nissan</title>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+    <main>
+      <div class="logoMarca">
+        <img src="../images/logos/marcas/nissan.webp" alt="" />
+      </div>
+      <div class="carros">
+        <ul>
+          <li class="nissan sentra">
+            <a href="#"
+              ><img
+                src="../images/carros/nissan/Sentra.webp"
+                alt="NISSAN SENTRA"
+              />
+              <h3>NISSAN SENTRA</h3>
+              <p>2.0 16V GASOLINA ADVANCE XTRONIC</p>
+              <p>R$ 137.855</p>
+            </a>
+          </li>
+          <li class="nissan versa">
+            <a href="#"
+              ><img
+                src="../images/carros/nissan/versa.jpg"
+                alt="NISSAN VERSA"
+              />
+              <h3>NISSAN VERSA</h3>
+              <p>1.6 16V FLEX ADVANCE XTRONIC</p>
+              <p>R$ 109.900</p></a
+            >
+          </li>
+          <li class="nissan frontier">
+            <a href="#"
+              ><img
+                src="../images/carros/nissan/frontier.webp"
+                alt="NISSAN FRONTIER"
+              />
+              <h3>NISSAN FRONTIER</h3>
+              <p>2.3 16V TURBO DIESEL PRO4X CD 4X4 AUTOMÁTICO</p>
+              <p>R$ 321.900</p></a
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script>
+      function loadHTML(id, url) {
+        fetch(url)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+          })
+          .catch((error) => console.error("Erro ao carregar HTML:", error));
+      }
+
+      loadHTML("header-placeholder", "header.html");
+      loadHTML("footer-placeholder", "footer.html");
+    </script>
+  </body>
+</html>

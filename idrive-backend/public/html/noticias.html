@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap");
+    </style>
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Noticias</title>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+    <main>
+      <section class="secaoNoticia">
+        <a href="https://www.youtube.com/watch?app=desktop&v=SwSPrShdmvA">
+          <div class="column">
+            <img
+              src="../images/carros/uno.png"
+              alt="Fiat uno em uma estrada de barro"
+            />
+            <p>Conheça o FIAT UNO e seu sitema 4x4 invisível.</p>
+            <p>Nem os engenheiros sabem como fizeram isso.</p>
+          </div>
+        </a>
+        <div class="column">
+          <video controls>
+            <source src="img/i drive - Drive.mp4" type="video/mp4" />
+          </video>
+          <p>"Me fala onde começamos, onde vamos, onde ir depois.</p>
+          <p>Eu te dou cinco minutos quando chegarmos lá.</p>
+          <p>
+            Haja o que houver nesses cinco minutos, eu estou à disposição para o
+            que for.
+          </p>
+          <p>Mas, se acontecer alguma coisa após esse tempo, estará sozinho.</p>
+          <p>Eu não quero participar do serviço.</p>
+          <p>E não porto armas.</p>
+          <p>Eu dirijo."</p>
+          <p>~Driver</p>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      function loadHTML(id, url) {
+        fetch(url)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+          })
+          .catch((error) => console.error("Erro ao carregar HTML:", error));
+      }
+
+      loadHTML("header-placeholder", "header.html");
+      loadHTML("footer-placeholder", "footer.html");
+    </script>
+  </body>
+</html>

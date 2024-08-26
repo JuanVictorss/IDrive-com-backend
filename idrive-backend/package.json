@@ -1,0 +1,29 @@
+{
+  "name": "idrive-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon app.js",
+    "start": "node app.js",
+    "db:table": "node database/table.js",
+    "db:seed": "node database/seed.js"
+  },
+  "type": "module",
+  "keywords": [
+    "carros"
+  ],
+  "author": "Juan Victor",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "uuid": "^10.0.0"
+  }
+}

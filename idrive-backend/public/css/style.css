@@ -1,0 +1,299 @@
+:root {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*HEADER*/
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 14px;
+}
+
+header img {
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+header > nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header > nav > ul {
+  display: flex;
+  gap: 15px;
+  margin-right: 100px;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+header > nav ul li {
+  display: block;
+}
+
+header .icone {
+  color: rgb(225, 17, 56);
+}
+header .login,
+.register {
+  height: 40px;
+  width: 80px;
+
+  color: white;
+  border: 1px solid rgb(225, 17, 56);
+  background-color: rgb(225, 17, 56);
+  border-radius: 50px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*MAIN*/
+main {
+  text-align: center;
+  background-color: rgb(225, 17, 56);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*section*/
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 750px;
+}
+
+.logoMarca img {
+  margin-top: 5px;
+  background-color: rgb(255, 255, 255);
+  height: 200px;
+  border-radius: 50%;
+}
+
+.secaoLogin {
+  flex-direction: column;
+  height: 680px;
+}
+
+section:nth-of-type(odd) {
+  background-color: rgb(225, 17, 56);
+}
+
+.secao1 > div img {
+  margin-top: 4px;
+  border-radius: 30px;
+}
+
+.secao1 > div .carro {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  z-index: 1;
+}
+
+.secao1 > div h1 {
+  position: absolute;
+  top: 2%;
+  left: 29%;
+  font-size: 40px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.secao1 > .marcas > ul {
+  position: absolute;
+  top: 30%;
+  left: 22%;
+  display: flex;
+  gap: 27px;
+}
+
+.secao1 > .marcas > ul li img {
+  background-color: rgb(255, 255, 255);
+  height: 200px;
+  border-radius: 50%;
+}
+
+.secao1 > .marcas ul li {
+  display: block;
+}
+
+.marcas p {
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: black;
+}
+
+/*LOGIN*/
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  color: white;
+}
+
+label,
+input,
+button {
+  margin: 5px;
+}
+
+input {
+  height: 60px;
+  width: 300px;
+  font-size: 25px;
+
+  padding: 20px;
+  color: black;
+  border-radius: 50px;
+}
+
+button {
+  height: 60px;
+  width: 120px;
+  font-size: 25px;
+
+  color: rgb(225, 17, 56);
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/*Footer*/
+footer {
+  background-color: #000000;
+  padding: 20px;
+  display: flex;
+  text-align: center;
+}
+
+.info {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.social-media {
+  flex: 1;
+}
+
+h2,
+h3 {
+  color: #ffffff;
+}
+
+p {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.carros ul {
+  display: flex;
+}
+
+.carros li {
+  flex: 1;
+  list-style: none;
+  background-color: #313131;
+}
+
+.carros img {
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 70%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.carros img:hover {
+  transform: scale(1.2);
+}
+
+.loginLogo {
+  position: relative;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  gap: 15px;
+  top: 50px;
+  margin-bottom: 150px;
+}
+
+.carros ul.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.secaoNoticia {
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.secaoNoticia video {
+  height: 400px;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+
+.secaoNoticia p {
+  margin-right: 50px;
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.secaoNoticia img {
+  margin-right: 10px;
+  height: 400px;
+  border-radius: 20px;
+}
