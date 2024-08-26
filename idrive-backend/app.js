@@ -1,6 +1,7 @@
-import express, { query } from "express";
+import express from "express";
 import cors from "cors";
 import sqlite3 from "sqlite3";
+import { routerUsuarios } from "./routes/usuarios.js";
 
 const app = express();
 
@@ -75,6 +76,8 @@ app.get("/api/carros/toyota", (req, res) => {
     }
   );
 });
+
+app.use(routerUsuarios);
 
 app.listen(3000, () => {
   console.log(`Servidor rodando na porta 3000`);

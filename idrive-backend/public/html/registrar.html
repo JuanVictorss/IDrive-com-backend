@@ -16,50 +16,24 @@
             alt="logo da I Drive preto"
           />
         </div>
-        <form id="register-form">
-          <label for="nome">Nome</label>
-          <input
-            type="text"
-            name="nome"
-            id="nome"
-            placeholder="Nome"
-            required
-          />
-
-          <label for="email">E-mail</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="E-mail"
-            required
-          />
-
-          <label for="senha">Senha</label>
+        <form id="registerForm">
+          <input type="text" id="nome" placeholder="Nome" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Senha" required />
           <input
             type="password"
-            name="senha"
-            id="senha"
-            placeholder="Senha"
-            required
-          />
-
-          <label for="confirmarSenha">Confirmar Senha</label>
-          <input
-            type="password"
-            name="confirmarSenha"
-            id="confirmarSenha"
+            id="confirmPassword"
             placeholder="Confirmar Senha"
             required
           />
-
-          <button id="register" type="submit">Registrar</button>
+          <button type="submit">Registrar</button>
         </form>
       </section>
     </main>
 
     <div id="footer-placeholder"></div>
 
+    <script src="../script.js"></script>
     <script>
       function loadHTML(id, url) {
         fetch(url)

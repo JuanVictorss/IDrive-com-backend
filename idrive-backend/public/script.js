@@ -36,3 +36,26 @@ function carregarCarros(url) {
     })
     .catch((error) => console.log("Erro ao buscar dados:", error));
 }
+
+//post formulario registro
+document.querySelector("form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const nome = document.querySelector("#nome").value;
+  const email = document.querySelector("#email").value;
+  const senha = document.querySelector("#password").value;
+  const confirmarSenha = document.querySelector("#confirmPassword").value;
+
+  const response = await fetch("/api/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ nome, email, senha, confirmarSenha }),
+  });
+
+  const data = await response.json();
+  if (response.ok) {
+    alert("Usuário registrado com sucesso");
+  } else {
+    alert(`Erro: ${data.message}`);
+  }
+});
