@@ -23,7 +23,10 @@ app.use(express.static("public"));
 // Rotas
 app.use(routerUsuarios);
 app.use(routerCarros);
-app.use(routerBMW, routerHyundai, routerNissan, routerToyota);
+app.use(routerBMW);
+app.use(routerHyundai);
+app.use(routerNissan);
+app.use(routerToyota);
 
 app.listen(3000, () => {
   console.log(`Servidor rodando na porta 3000`);

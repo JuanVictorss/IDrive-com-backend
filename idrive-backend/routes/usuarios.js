@@ -1,25 +1,19 @@
 import { Router } from "express";
-import jwt from "jsonwebtoken";
 import { obterUsuarioPorEmail, criarUsuario } from "../models/usuarios.js";
-const SEGREDO = "VOCÊNAOPODESABER";
-
 const routerUsuarios = Router();
 
 routerUsuarios.post("/api/register", async (req, res) => {
-  const { nome, email, senha, confirmarSenha } = req.body;
-
-  if (senha !== confirmarSenha) {
-    return res.status(400).json({ message: "Senhas diferentes" });
-  }
-
+  const { nome, email, senha } = req.body;
+  console.log(req.body);
   try {
-    const usuarioExistente = await obterUsuarioPorEmail(email);
-    if (usuarioExistente) {
+    const usuarioExiste = await obterUsuarioPorEmail(email);
+    if (usuarioExiste) {
       return res.status(400).json({ message: "Conta já existe" });
     }
     await criarUsuario(nome, email, senha);
-    return res.status(201).json({ message: "Usuário registrado com sucesso" });
+    return res.status(201).json({ message: "ain" });
   } catch (error) {
+    console.error("Erro ao registrar: ", error);
     return res.status(500).json({ message: "Erro no servidor" });
   }
 });

@@ -37,25 +37,40 @@ function carregarCarros(url) {
     .catch((error) => console.log("Erro ao buscar dados:", error));
 }
 
-//post formulario registro
-document.querySelector("form").addEventListener("submit", async (event) => {
-  event.preventDefault();
+document
+  .getElementById("register")
+  .addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-  const nome = document.querySelector("#nome").value;
-  const email = document.querySelector("#email").value;
-  const senha = document.querySelector("#password").value;
-  const confirmarSenha = document.querySelector("#confirmPassword").value;
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+    const confirmarSenha = document.getElementById("confirmarSenha").value;
 
-  const response = await fetch("/api/register", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ nome, email, senha, confirmarSenha }),
+    if (senha !== confirmarSenha) {
+      alert("Senhas diferentes.");
+      return;
+    }
+
+    const dadosDoUsuario = {
+      nome: nome,
+      email: email,
+      senha: senha,
+      confirmarSenha: confirmarSenha,
+    };
+
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dadosDoUsuario),
+      });
+      if (response.ok) {
+        window.location.href = "./html/login.html";
+      } else {
+        alert(`Erro: ${data.message}`);
+      }
+    } catch (error) {
+      alert(`Erro de rede: ${error.message}`);
+    }
   });
-
-  const data = await response.json();
-  if (response.ok) {
-    alert("Usuário registrado com sucesso");
-  } else {
-    alert(`Erro: ${data.message}`);
-  }
-});
