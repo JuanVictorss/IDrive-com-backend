@@ -66,7 +66,7 @@ document
         body: JSON.stringify(dadosDoUsuario),
       });
       if (response.ok) {
-        window.location.href = "./html/login.html";
+        window.location.href = "http://localhost:3000/html/login.html";
       } else {
         alert(`Erro: ${data.message}`);
       }
