@@ -20,9 +20,7 @@ document.getElementById("login").addEventListener("submit", async (event) => {
 
     const data = await response.json();
     if (response.ok) {
-      alert("Login realizado com sucesso.");
-
-      window.location.href = "/dashboard";
+      window.location.href = "http://localhost:3000/index.html";
     } else {
       alert(`Erro: ${data.message}`);
     }

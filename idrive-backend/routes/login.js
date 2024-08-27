@@ -1,6 +1,12 @@
 import { Router } from "express";
-import { obterUsuarioPorEmail, criarUsuario } from "../models/usuarios.js";
+import { obterUsuarioPorEmail } from "../models/usuarios.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config();
+const SENHA = process.env.senha;
+
 const routerLogin = Router();
 
 routerLogin.post("/api/login", async (req, res) => {
@@ -12,7 +18,15 @@ routerLogin.post("/api/login", async (req, res) => {
     if (usuario) {
       const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
       if (senhaCorreta) {
-        return res.status(200).json({ message: "Login bem-sucedido" });
+        const token = jwt.sign(
+          { id: usuario.id, email: usuario.email },
+          SENHA,
+          {
+            expiresIn: "6s",
+          }
+        );
+        console.log(token);
+        return res.status(200).json({ message: "Logado", token: token });
       } else {
         return res.status(401).json({ message: "Senha Incorreta" });
       }
