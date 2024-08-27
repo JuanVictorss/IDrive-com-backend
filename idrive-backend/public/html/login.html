@@ -17,30 +17,19 @@
             alt="logo da I Drive preto"
           />
         </div>
-        <form>
+        <form id="login">
           <label for="email">E-mail</label>
-          <input type="email" placeholder="email" />
+          <input id="email" type="email" placeholder="email" />
           <label for="password">Password</label>
-          <input type="password" placeholder="password" />
-          <button id="login" type="submit">Login</button>
+          <input id="senha" type="password" placeholder="password" />
+          <button type="submit">Login</button>
         </form>
       </section>
     </main>
 
     <div id="footer-placeholder"></div>
 
-    <script>
-      function loadHTML(id, url) {
-        fetch(url)
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById(id).innerHTML = data;
-          })
-          .catch((error) => console.error("Erro ao carregar HTML:", error));
-      }
-
-      loadHTML("header-placeholder", "header.html");
-      loadHTML("footer-placeholder", "footer.html");
-    </script>
+    <script src="../js/login.js"></script>
+    <script src="../js/headerEfooter.js"></script>
   </body>
 </html>
