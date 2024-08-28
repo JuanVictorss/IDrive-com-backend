@@ -22,7 +22,7 @@ routerLogin.post("/api/login", async (req, res) => {
           { id: usuario.id, email: usuario.email },
           SENHA,
           {
-            expiresIn: "6s",
+            expiresIn: "20s",
           }
         );
         console.log(token);

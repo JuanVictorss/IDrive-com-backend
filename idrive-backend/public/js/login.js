@@ -20,6 +20,7 @@ document.getElementById("login").addEventListener("submit", async (event) => {
 
     const data = await response.json();
     if (response.ok) {
+      localStorage.setItem("jwtToken", data.token);
       window.location.href = "http://localhost:3000/index.html";
     } else {
       alert(`Erro: ${data.message}`);

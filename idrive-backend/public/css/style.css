@@ -46,7 +46,8 @@ header .icone {
   color: rgb(225, 17, 56);
 }
 header .login,
-.register {
+.register,
+.logout {
   height: 40px;
   width: 80px;
 
