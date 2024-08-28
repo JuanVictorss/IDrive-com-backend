@@ -38,4 +38,17 @@ async function obtemToyota() {
   return carros;
 }
 
-export { obtemTodosOsCarros, obtemBMW, obtemHyundai, obtemNissan, obtemToyota };
+async function obtemCarroPorID(id) {
+  const db = await dbPromise;
+  const carro = await db.get("SELECT * FROM carros WHERE id = ?", [id]);
+  return carro;
+}
+
+export {
+  obtemCarroPorID,
+  obtemTodosOsCarros,
+  obtemBMW,
+  obtemHyundai,
+  obtemNissan,
+  obtemToyota,
+};

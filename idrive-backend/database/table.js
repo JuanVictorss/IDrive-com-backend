@@ -16,8 +16,8 @@ async function criarTabelas() {
 
   await db.run(`CREATE TABLE IF NOT EXISTS usuarios(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome NOT NULL,
-    email UNIQUE NOT NULL,
+    nome TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
     senha TEXT NOT NULL
     )`);
 }

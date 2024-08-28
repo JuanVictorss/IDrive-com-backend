@@ -6,8 +6,8 @@ import { routerLogin } from "./routes/login.js";
 import {
   routerCarros,
   routerBMW,
-  routerHyundai,
   routerNissan,
+  routerHyundai,
   routerToyota,
 } from "./routes/carros.js";
 
@@ -28,9 +28,9 @@ app.use(routerLogin);
 // Rotas de carros
 app.use(routerCarros);
 app.use(routerBMW);
+app.use(routerToyota);
 app.use(routerHyundai);
 app.use(routerNissan);
-app.use(routerToyota);
 
 app.listen(3000, () => {
   console.log(`Servidor rodando na porta 3000`);
