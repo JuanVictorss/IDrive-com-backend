@@ -3,10 +3,8 @@ import { obterUsuarioPorEmail } from "../models/usuarios.js";
 import autenticarJWT from "../middleware/JWT.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
 
-dotenv.config();
-const SENHA = process.env.senha;
+const SENHA = "MINHASENHASUPERSECRETA É 123";
 
 const routerLogin = Router();
 
@@ -21,7 +19,7 @@ routerLogin.post("/api/login", async (req, res) => {
           { id: usuario.id, email: usuario.email },
           SENHA,
           {
-            expiresIn: "3600s",
+            expiresIn: "100s",
           }
         );
         console.log(token);
