@@ -45,11 +45,7 @@ Instalando pacotes
 ```bash
   npm install
 ```
-    
-criando .env
-```bash
-  echo "senha = escolhaUmaSenha" > .env
-```
+
 ## Rodando
 
 
