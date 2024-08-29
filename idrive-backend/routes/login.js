@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { obterUsuarioPorEmail } from "../models/usuarios.js";
+import autenticarJWT from "../middleware/JWT.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
@@ -10,9 +11,7 @@ const SENHA = process.env.senha;
 const routerLogin = Router();
 
 routerLogin.post("/api/login", async (req, res) => {
-  console.log("Request body:", req.body);
   const { email, senha } = req.body;
-
   try {
     const usuario = await obterUsuarioPorEmail(email);
     if (usuario) {
@@ -22,7 +21,7 @@ routerLogin.post("/api/login", async (req, res) => {
           { id: usuario.id, email: usuario.email },
           SENHA,
           {
-            expiresIn: "20s",
+            expiresIn: "3600s",
           }
         );
         console.log(token);
@@ -36,6 +35,17 @@ routerLogin.post("/api/login", async (req, res) => {
   } catch (error) {
     console.error("Erro ao fazer login:", error);
     return res.status(500).json({ message: "Erro no servidor" });
+  }
+});
+
+routerLogin.get("/api/usuario", autenticarJWT, async (req, res) => {
+  const email = req.user.email;
+  const usuario = await obterUsuarioPorEmail(email);
+  if (usuario) {
+    return res.status(200).json({
+      nome: usuario.nome,
+      email: usuario.email,
+    });
   }
 });
 

@@ -322,7 +322,8 @@ a:hover {
   flex-direction: row;
   align-items: center;
 }
-.botao {
+.botao,
+.anunciar-carro {
   height: 40px;
   width: 100px;
 
@@ -337,4 +338,19 @@ a:hover {
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.perfil {
+  border-radius: 50%;
+  width: 20%;
+}
+
+.dados p {
+  font-size: 40px;
+}
+
+.post-carro {
+  margin: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }

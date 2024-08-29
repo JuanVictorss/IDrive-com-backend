@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import sqlite3 from "sqlite3";
 import { routerRegistro } from "./routes/registro.js";
+import { routerPostCarro } from "./routes/registrarCarro.js";
 import { routerLogin } from "./routes/login.js";
 import {
   routerCarros,
@@ -31,6 +32,7 @@ app.use(routerBMW);
 app.use(routerToyota);
 app.use(routerHyundai);
 app.use(routerNissan);
+app.use(routerPostCarro);
 
 app.listen(3000, () => {
   console.log(`Servidor rodando na porta 3000`);

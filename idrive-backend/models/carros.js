@@ -1,4 +1,5 @@
 import { dbPromise } from "../database/db.js";
+import { v4 } from "uuid";
 
 async function obtemTodosOsCarros() {
   const db = await dbPromise;
@@ -44,6 +45,28 @@ async function obtemCarroPorID(id) {
   return carro;
 }
 
+async function criarCarro(
+  img,
+  modelo,
+  descricao,
+  ano,
+  cambio,
+  carroceria,
+  valor
+) {
+  try {
+    const db = await dbPromise;
+    const id = v4();
+    return await db.run(
+      "INSERT INTO carros (id, img, modelo, descricao, ano, cambio, carroceria, valor) VALUES (?,?,?,?,?,?,?,?)",
+      [id, img, modelo, descricao, ano, cambio, carroceria, valor]
+    );
+  } catch (error) {
+    console.error("Erro ao adicionar veiculo", error);
+    throw new Error("Erro ao criar veiculo");
+  }
+}
+
 export {
   obtemCarroPorID,
   obtemTodosOsCarros,
@@ -51,4 +74,5 @@ export {
   obtemHyundai,
   obtemNissan,
   obtemToyota,
+  criarCarro,
 };

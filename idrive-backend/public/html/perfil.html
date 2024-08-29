@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <div id="header-placeholder"></div>
-    <p>MINHA CONTA</p>
+    <main>
+      <h1>Meu Perfil</h1>
+      <img class="perfil" src="https://i.pinimg.com/originals/88/c3/96/88c396e912b2e0743a8ea040d9ed7333.jpg" alt="Minha foto">
+      <div class="dados">
+        <p>Nome: <span id="nome"></span></p>
+        <p>Email: <span id="email"></span></p>
+      </div>
+      <a class="anunciar-carro" href="./postCarro.html">Anunciar carro</a>
+    </main>
     <div id="footer-placeholder"></div>
-
     <script src="../js/headerEfooter.js"></script>
-  </body>
+    <script src="../js/perfil.js"></script>
 </html>

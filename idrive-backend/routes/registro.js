@@ -4,7 +4,6 @@ const routerRegistro = Router();
 
 routerRegistro.post("/api/register", async (req, res) => {
   const { nome, email, senha } = req.body;
-  console.log(req.body);
   try {
     const usuarioExiste = await obterUsuarioPorEmail(email);
     if (usuarioExiste) {
