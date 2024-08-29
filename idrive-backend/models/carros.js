@@ -45,6 +45,12 @@ async function obtemCarroPorID(id) {
   return carro;
 }
 
+async function deletaCarroPorID(id) {
+  const db = await dbPromise;
+  await db.run("DELETE FROM carros WHERE id = ?", [id]);
+  return { message: "Carro deletado com sucesso" };
+}
+
 async function criarCarro(
   img,
   modelo,
@@ -75,4 +81,5 @@ export {
   obtemNissan,
   obtemToyota,
   criarCarro,
+  deletaCarroPorID,
 };

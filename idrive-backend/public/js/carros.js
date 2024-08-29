@@ -55,6 +55,22 @@ function carregarCarro() {
           carro.descricao;
         document.getElementById("preco-carro").textContent =
           carro.valor.toFixed(2);
+        const token = localStorage.getItem("jwtToken");
+
+        document
+          .getElementById("comprar-carro")
+          .addEventListener("click", async () => {
+            if (token) {
+              const response = await fetch(`/api/carros/${carroID}`, {
+                method: "DELETE",
+              });
+              if (response.ok) {
+                window.location.href = "../html/sucessoCompra.html";
+              }
+            } else {
+              window.location.href = "../html/login.html";
+            }
+          });
       }
     });
 }

@@ -6,6 +6,7 @@ import {
   obtemNissan,
   obtemToyota,
   obtemCarroPorID,
+  deletaCarroPorID,
 } from "../models/carros.js";
 
 const routerCarros = Router();
@@ -47,4 +48,15 @@ routerCarros.get("/api/carros/:id", async (req, res) => {
     return res.status(404).json({ message: "Carro não encontrado" });
   }
 });
+
+routerCarros.delete("/api/carros/:id", async (req, res) => {
+  const carro = await obtemCarroPorID(req.params.id);
+  if (carro) {
+    await deletaCarroPorID(req.params.id);
+    return res.status(200).json({ message: "Carro deletado com sucesso" });
+  } else {
+    return res.status(404).json({ message: "Carro não encontrado" });
+  }
+});
+
 export { routerCarros, routerBMW, routerHyundai, routerNissan, routerToyota };
