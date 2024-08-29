@@ -1,8 +1,6 @@
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
 
-dotenv.config();
-const SENHA = process.env.senha;
+const SENHA = "MINHASENHASUPERSECRETA É 123";
 
 function autenticarJWT(req, res, next) {
   const authHeader = req.headers.authorization;
