@@ -10,7 +10,7 @@ routerRegistro.post("/api/register", async (req, res) => {
       return res.status(400).json({ message: "Conta já existe" });
     }
     await criarUsuario(nome, email, senha);
-    return res.status(201).json({ message: "ain" });
+    return res.status(201).json({ message: "usuário criado" });
   } catch (error) {
     console.error("Erro ao registrar: ", error);
     return res.status(500).json({ message: "Erro no servidor" });
